@@ -1,4 +1,6 @@
-# atlassian-connect-sample-app-java
+# [WIP] atlassian-connect-sample-app-java
+
+> **_NOTE:_**  This repository is in progress and is not ready yet.
 
 ## About
 This repository contains a [Spring Boot](https://spring.io/projects/spring-boot/) starter for building an [Atlassian Connect app](https://developer.atlassian.com/cloud/jira/platform/getting-started-with-connect/).
