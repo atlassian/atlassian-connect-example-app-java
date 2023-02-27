@@ -24,9 +24,6 @@
         <li>
             <a class="aui-button aui-button-link" id="configPage">Atlassian Connect App config</a>
         </li>
-        <li>
-            <a class="aui-button aui-button-link" id="webhookLogsPage">Jira Webhook Logs</a>
-        </li>
     </ul>
 </div>
 <br/>
@@ -41,9 +38,6 @@
      */
     document.getElementById('configPage').addEventListener('click', () => {
         AP.navigator.go('addonmodule', { moduleKey: 'acn-config' });
-    });
-    document.getElementById('webhookLogsPage').addEventListener('click', () => {
-        AP.navigator.go('addonmodule', { moduleKey: 'acn-logs-webhooks' });
     });
 </script>
 </html>
