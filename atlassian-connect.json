@@ -7,6 +7,9 @@
     "name": "Java connect app sample",
     "url": "https://github.com/atlassian/atlassian-connect-sample-app-java/"
   },
+  "authentication": {
+    "type": "none"
+  },
   "scopes": [
     "READ"
   ],
