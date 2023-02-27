@@ -24,5 +24,5 @@ hs_err_pid*
 
 .idea
 .mvn
-/atlassian-connect-sample-app-java.iml
+*.iml
 /target
