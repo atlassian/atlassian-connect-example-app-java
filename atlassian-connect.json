@@ -2,13 +2,10 @@
   "name": "Sample Connect App Java",
   "description": "Atlassian Connect app - Java",
   "key": "com.atlassian.sample-app-java",
-  "baseUrl": "{{baseUrl}}",
+  "baseUrl": "https://ab46-123-103-201-174.ngrok.io/",
   "vendor": {
     "name": "Java connect app sample",
     "url": "https://github.com/atlassian/atlassian-connect-sample-app-java/"
-  },
-  "authentication": {
-    "type": "jwt"
   },
   "scopes": [
     "READ"
