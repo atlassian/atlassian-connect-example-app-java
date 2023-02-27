@@ -21,7 +21,10 @@ This app is aimed to help you to easily add your integration in Jira.
 - TBD
 
 ## Running your application
-- TBD
+- You can run this app in 2 simple steps:
+  - **Install dependencies** - Run `mvn clean install`.
+  - **Tunneling** - For this purpose, we are using ngrok. You need to set the ngrok authtoken in the env file, so please make sure you have a ngrok account. Simply go to ngrok and copy your authtoken and paste it in the .env file.
+  - **Running docker compose** - Then simply run `docker-compose up`. Once the docker finishes running, you can view the tunneled URL in the logs.
 
 ## Testing
 - TBD
