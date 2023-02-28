@@ -1,4 +1,7 @@
-FROM openjdk:17-oracle
+FROM ubuntu:latest
+
+RUN apt update
+RUN apt install -y jq curl openjdk-17-jdk
 
 ARG MAVEN_VERSION=3.6.3
 ARG USER_HOME_DIR="/root"

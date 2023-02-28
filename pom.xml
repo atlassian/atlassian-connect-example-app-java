@@ -53,6 +53,7 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
+						<id>after-clean-install</id>
 						<phase>generate-sources</phase>
 						<configuration>
 							<tasks>
@@ -60,6 +61,23 @@
 									dir="${project.basedir}"
 									executable="${project.basedir}/src/main/sh/createEnv.sh"
 									failonerror="true">
+								</exec>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>after-start</id>
+						<phase>test-compile</phase>
+						<configuration>
+							<tasks>
+								<exec
+										dir="${project.basedir}"
+										executable="${project.basedir}/src/main/sh/fetchTunnelUrl.sh"
+										failonerror="true">
 								</exec>
 							</tasks>
 						</configuration>
