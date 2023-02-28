@@ -21,10 +21,15 @@ This app is aimed to help you to easily add your integration in Jira.
 - TBD
 
 ## Running your application
-- You can run this app in 2 simple steps:
+- You can run this app in 3 simple steps:
   - **Install dependencies** - Run `mvn clean install`.
+
   - **Tunneling** - For this purpose, we are using ngrok. You need to set the ngrok authtoken in the env file, so please make sure you have a ngrok account. Simply go to ngrok and copy your authtoken and paste it in the .env file.
+
   - **Running docker compose** - Then simply run `docker-compose up`. Once the docker finishes running, you can view the tunneled URL in the logs.
+    ![img.png](src/main/resources/static/images/tunnel-output.png)
+
+After you have the tunneled URL, check for the config in the url `/atlassian-connect.json`(`https://TUNNELED_URL/atlassian-connect.json`). This is the __app descriptor URL__ for uploading the app and installing in Jira.
 
 ## Testing
 - TBD
