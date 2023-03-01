@@ -5,7 +5,7 @@ baseUrl=$(curl --silent http://tunnel:4040/api/tunnels | jq -r '.tunnels[] | sel
 echo "NGROK Tunneled URL -------------- $baseUrl"
 
 DIR=$(dirname "$0")
-CONNECT_FILE="${DIR}/../../../atlassian-connect.json"
+CONNECT_FILE="${DIR}/../atlassian-connect.json"
 
 if [ $baseUrl ]; then
   sed -i -E "s|https:\/\/.*ngrok\.io\/?|${baseUrl}|g" $CONNECT_FILE

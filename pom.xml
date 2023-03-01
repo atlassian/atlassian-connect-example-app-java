@@ -59,7 +59,7 @@
 							<tasks>
 								<exec
 									dir="${project.basedir}"
-									executable="${project.basedir}/src/main/sh/createEnv.sh"
+									executable="${project.basedir}/sh/createEnv.sh"
 									failonerror="true">
 								</exec>
 							</tasks>
@@ -76,7 +76,7 @@
 							<tasks>
 								<exec
 										dir="${project.basedir}"
-										executable="${project.basedir}/src/main/sh/fetchTunnelUrl.sh"
+										executable="${project.basedir}/sh/fetchTunnelUrl.sh"
 										failonerror="true">
 								</exec>
 							</tasks>
