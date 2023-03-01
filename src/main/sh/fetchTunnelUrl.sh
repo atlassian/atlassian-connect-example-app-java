@@ -8,7 +8,7 @@ DIR=$(dirname "$0")
 CONNECT_FILE="${DIR}/../../../atlassian-connect.json"
 
 if [ $baseUrl ]; then
-  sed -i  "s|{{baseUrl}}|${baseUrl}|g" $CONNECT_FILE
+  sed -i -E "s|https:\/\/.*ngrok\.io\/?|${baseUrl}|g" $CONNECT_FILE
   echo "Base URL updated in the atlassian connect file"
 fi
 
