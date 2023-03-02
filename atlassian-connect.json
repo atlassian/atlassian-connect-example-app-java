@@ -2,7 +2,7 @@
   "name": "Sample Connect App Java",
   "description": "Atlassian Connect app - Java",
   "key": "com.atlassian.sample-app-java",
-  "baseUrl": "https://GENERATEURL.ngrok.io/",
+  "baseUrl": "https://0d82-218-215-2-48.ngrok.io",
   "vendor": {
     "name": "Java connect app sample",
     "url": "https://github.com/atlassian/atlassian-connect-sample-app-java/"
@@ -47,6 +47,14 @@
         "location": "none",
         "name": {
           "value": "Connect Descriptor"
+        }
+      },
+      {
+        "url": "/logs/webhooks",
+        "key": "acn-logs-webhooks",
+        "location": "none",
+        "name": {
+          "value": "Logs for webhooks"
         }
       }
     ]
