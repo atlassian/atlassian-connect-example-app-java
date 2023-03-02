@@ -1,13 +1,32 @@
-package com.sample.connect.app.atlassianconnectsampleappjava.models;
+package com.sample.connect.app.atlassianconnectsampleappjava.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tenants")
 public class Tenant {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column
     private String host;
 
+    @Column
     private String sharedSecret;
 
+    @Column
     private String clientKey;
+
+    public Tenant(String host, String sharedSecret, String clientKey) {
+        this.host = host;
+        this.sharedSecret = sharedSecret;
+        this.clientKey = clientKey;
+    }
+
+    public Tenant() {
+
+    }
 
     public int getId() {
         return id;
