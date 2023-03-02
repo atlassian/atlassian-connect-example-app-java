@@ -15,8 +15,12 @@ public class Log {
     @Column
     public String message;
 
-    @Column
+    @Column(columnDefinition = "LONGTEXT")
     public String data;
+
+    public Log() {
+
+    }
 
     public Log(int tenantId, String message, String data) {
         this.tenantId = tenantId;
@@ -54,9 +58,5 @@ public class Log {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    public Log() {
-
     }
 }
