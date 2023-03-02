@@ -8,12 +8,16 @@
     "url": "https://github.com/atlassian/atlassian-connect-sample-app-java/"
   },
   "authentication": {
-    "type": "none"
+    "type": "jwt"
   },
   "scopes": [
     "READ"
   ],
   "apiVersion": 1,
+  "lifecycle": {
+    "installed": "/events/installed",
+    "uninstalled": "/events/uninstalled"
+  },
   "modules": {
     "postInstallPage": {
       "url": "/",

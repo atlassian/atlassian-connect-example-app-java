@@ -23,19 +23,4 @@ public class Home {
 
         return new ModelAndView("home", model);
     }
-
-    @GetMapping("/checkdb")
-    public ModelAndView db(ModelMap model) {
-        model.put("index", "Home Page");
-        model.put("body", "You in the db page!");
-
-        Long identifier = new Timestamp(System.currentTimeMillis()).getTime();
-
-        Tenant newTenant = new Tenant("https://mytenant" + identifier + ".com", "sharedSecret-"+identifier, "clientKey-" + identifier);
-
-        tenantRepository.save(newTenant);
-
-
-        return new ModelAndView("home", model);
-    }
 }
