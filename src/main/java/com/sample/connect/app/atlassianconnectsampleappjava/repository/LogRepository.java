@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface LogRepository extends JpaRepository<Log, Long> {
     List<Log> findByTenantId(int tenantId);
+
+    List<Log> deleteByTenantId(int tenantId);
 }
