@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/events")
 public class Events {
     @Autowired
     TenantRepository tenantRepository;
-
-    Logger logger = Logger.getLogger(Events.class.getName());
 
     @PostMapping("/installed")
     public ResponseEntity<String> installed(@RequestBody Map<String, String> body) throws Exception {

@@ -12,7 +12,6 @@ import java.io.IOException;
 
 @RestController
 public class AtlassianConnectJson {
-
     @GetMapping("/atlassian-connect.json")
     public JsonNode atlassianConnect() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
