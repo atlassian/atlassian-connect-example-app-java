@@ -4,6 +4,7 @@ import com.sample.connect.app.atlassianconnectsampleappjava.model.Log;
 import com.sample.connect.app.atlassianconnectsampleappjava.model.Tenant;
 import com.sample.connect.app.atlassianconnectsampleappjava.repository.LogRepository;
 import com.sample.connect.app.atlassianconnectsampleappjava.repository.TenantRepository;
+import com.sample.connect.app.atlassianconnectsampleappjava.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,11 +30,15 @@ public class Logs {
         String host = params.get("xdm_e");
         String jwt = params.get("jwt");
 
-        if (jwt == null || jwt.equals("")) {
-            throw new Exception("JWT Token not found");
+        Tenant tenant = tenantRepository.findByHost(host).get(0);
+
+        if (!Utils.verifyTokenValidity(jwt, tenant.getClientKey())) {
+            throw new Exception("JWT token is invalid");
+        }
+        if (!Utils.verifyTokenSignature(jwt, tenant.getSharedSecret())) {
+            throw new Exception("Invalid signature for the JWT token");
         }
 
-        Tenant tenant = tenantRepository.findByHost(host).get(0);
         List<Log> logs = logRepository.findByTenantId(tenant.getId());
 
         model.put("index", "Webhooks Page");
