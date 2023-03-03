@@ -22,27 +22,19 @@ public class Events {
 
     @PostMapping("/installed")
     public ResponseEntity<String> installed(@RequestBody Map<String, String> body) throws Exception {
-        try {
-            Tenant newTenant = new Tenant(body.get("baseUrl"), body.get("sharedSecret"), body.get("clientKey"));
-            tenantRepository.save(newTenant);
+        Tenant newTenant = new Tenant(body.get("baseUrl"), body.get("sharedSecret"), body.get("clientKey"));
+        tenantRepository.save(newTenant);
 
-            return ResponseEntity.ok().build();
-        } catch (Exception ex) {
-            throw new Exception(ex);
-        }
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/uninstalled")
     @Transactional
     public ResponseEntity<String> uninstalled(@RequestBody Map<String, String> body) throws Exception {
-        try {
-            List<Tenant> tenant = tenantRepository.findByHost(body.get("baseUrl"));
-            tenantRepository.delete(tenant.get(0));
-            logRepository.deleteByTenantId(tenant.get(0).getId());
+        List<Tenant> tenant = tenantRepository.findByHost(body.get("baseUrl"));
+        tenantRepository.delete(tenant.get(0));
+        logRepository.deleteByTenantId(tenant.get(0).getId());
 
-            return ResponseEntity.ok().build();
-        } catch (Exception ex) {
-            throw new Exception(ex);
-        }
+        return ResponseEntity.ok().build();
     }
 }
