@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aui/9.5.1/aui/aui-prototyping.min.css" />
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
     <title>{{index}}</title>
 </head>
 <body>
@@ -24,6 +24,9 @@
         <li>
             <a class="aui-button aui-button-link" id="configPage">Atlassian Connect App config</a>
         </li>
+        <li>
+            <a class="aui-button aui-button-link" id="webhookLogsPage">Jira Webhook Logs</a>
+        </li>
     </ul>
 </div>
 <br/>
@@ -38,6 +41,9 @@
      */
     document.getElementById('configPage').addEventListener('click', () => {
         AP.navigator.go('addonmodule', { moduleKey: 'acn-config' });
+    });
+    document.getElementById('webhookLogsPage').addEventListener('click', () => {
+        AP.navigator.go('addonmodule', { moduleKey: 'acn-logs-webhooks' });
     });
 </script>
 </html>

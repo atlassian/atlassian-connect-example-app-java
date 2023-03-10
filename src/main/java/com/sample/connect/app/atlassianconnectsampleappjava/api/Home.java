@@ -7,7 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class Home {
-
     @GetMapping("/")
     public ModelAndView home(ModelMap model) {
         model.put("index", "Home Page");
