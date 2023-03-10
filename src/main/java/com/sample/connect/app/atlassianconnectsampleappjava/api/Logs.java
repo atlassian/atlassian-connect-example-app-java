@@ -32,12 +32,7 @@ public class Logs {
 
         Tenant tenant = tenantRepository.findByHost(host).get(0);
 
-        if (!Utils.verifyTokenValidity(jwt, tenant.getClientKey())) {
-            throw new Exception("JWT token is invalid");
-        }
-        if (!Utils.verifyTokenSignature(jwt, tenant.getSharedSecret())) {
-            throw new Exception("Invalid signature for the JWT token");
-        }
+        // TODO: Verify the jwt token using atlassian-jwt
 
         List<Log> logs = logRepository.findByTenantId(tenant.getId());
 
