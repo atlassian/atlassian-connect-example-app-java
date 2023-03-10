@@ -4,7 +4,6 @@ import com.sample.connect.app.atlassianconnectsampleappjava.model.Log;
 import com.sample.connect.app.atlassianconnectsampleappjava.model.Tenant;
 import com.sample.connect.app.atlassianconnectsampleappjava.repository.LogRepository;
 import com.sample.connect.app.atlassianconnectsampleappjava.repository.TenantRepository;
-import com.sample.connect.app.atlassianconnectsampleappjava.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +30,7 @@ public class Logs {
         String jwt = params.get("jwt");
 
         Tenant tenant = tenantRepository.findByHost(host).get(0);
+
 
         // TODO: Verify the jwt token using atlassian-jwt
 
